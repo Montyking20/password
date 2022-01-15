@@ -31,4 +31,4 @@ Password generated matching criteria is generated.
 ## What it looks like
 
 
-![Password Generator](../Screenshot-mainpage.jpg)
+![Password Generator](/assets/images/Screenshot-mainpage.jpg)
