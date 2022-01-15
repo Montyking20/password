@@ -7,11 +7,11 @@ function generatePassword(){
   let upCs = 'ABCDEFGHIJKLMNOPRSTUVWXYZ';
   let numR = '1234567890';
   let spCh = '~!@#$%^&*()_+{}:?><;.,';
-  let password = '';
+  let generatedPassword = '';
   let chars = '';
 
 // Password length
-let length = prompt('Please indicate a password length between 8 and 128.')
+let length = prompt('How many characters would you like your password length to be? \n 8 - 128 characters.')
 
 
 if (length >= 8 && length <= 128) {
@@ -22,44 +22,42 @@ return '';
 }
 
 // Character Prompts
-let qrylowCs = confirm('Do you want to use lower case (a-z) letters in your password?')
-let qryupCs = confirm('Do you want to use upper case (A-Z) letters in your password?')
-let qrynumR = confirm('Do you want to use numbers (0-9) in your password?')
-let qryspCh = confirm('Do you want to use special characters (!#$%&\'()*+,-./:;<=>?@[]^_`{|}~) letters in your password?')
+let checklowCs = confirm('Would you like to use lower case (a-z) letters?')
+let checkupCs = confirm('Would you like to use upper case (A-Z) letters?')
+let checknumR = confirm('Would you like to use numbers (0-9)?')
+let checkspCh = confirm('Would you like to use any special characters (!#$%&\')?')
 
-// Validate at least one criteria was selected
-// Execute random character selection based on password length
-// If lower case letters are wanted, randomly select a letter from the smLttrs array.
-if (qrylowCs) {
+// Verify a character was chosen.
+if (checklowCs) {
   chars += lowCs
 } 
-if (qryupCs) {
+if (checkupCs) {
   chars += upCs
 }
-if (qrynumR) {
+if (checknumR) {
   chars += numR
 }
-if (qryspCh) {
+if (checkspCh) {
   chars += spCh
 }
 if (
-  !qrylowCs && !qryupCs && !qrynumR && !qryspCh
+  !checklowCs && !checkupCs && !checknumR && !checkspCh
 ) {
   return alert('Please select a character');
 }
 
 for (let i = 0; i < length; i++) {
-  password +=chars[Math.floor(Math.random () * chars.length)];
+  generatedPassword +=chars[Math.floor(Math.random () * chars.length)];
 }
-return password;
+return generatedPassword;
 }
 
 // paste password into #password input
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let generatedPassword = generatePassword();
+  let passwordText = document.querySelector("#password");
 
-  passwordText.value = password;
+  passwordText.value = generatedPassword;
 }
 
 
