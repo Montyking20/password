@@ -18,7 +18,9 @@ Password generated matching criteria is generated.
 
 ### Links
 
+## [password](https://github.com/Montyking20/password)
 
+## [Github](https://montyking20.github.io/password/)
 
 ## What it looks like
 
